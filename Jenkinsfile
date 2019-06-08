@@ -7,4 +7,7 @@ node{
     
     sh "${mavenhome}/bin/mvn package"
   }
+  stage('slack notification'){
+   slackSend baseUrl: 'https://hooks.slack.com/services/TKFEXEKRU/', channel: '#devops', color: 'good', message: 'hi how r u?', teamDomain: 'pesimnc', tokenCredentialId: 'slack-demo' 
+  }
 }
